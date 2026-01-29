@@ -1,19 +1,15 @@
 import {useState} from "react";
-import "./App.css";
 
 function App() {
-  const [highlighted, setHighlighted]=useState(false);
+  const [count, setCount]=useState(0);
 
   return(
     <div style={{padding: "40px"}}>
-      <h2>Declarative React Version</h2>
+      <h2>Counter</h2>
 
-      <button onClick={() => setHighlighted(!highlighted)}>
-        Toggle Highlight
-      </button>
-      <p className={highlighted ? "highlight" : ""}>
-        This paragraph will be highlighted using React state.
-      </p>
+      <button onClick={() => setCount(count - 1 )}>-</button>
+      <span style={{ margin:"0 20px"}}>{count}</span>
+      <button onClick={() => setCount(count+1)}>+</button>
     </div>
   );
 }
